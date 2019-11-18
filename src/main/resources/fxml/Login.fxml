@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="loginRoot" stylesheets="@../styles/Styles.css" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.sujan.controller.LoginController">
+    <opaqueInsets>
+        <Insets />
+    </opaqueInsets>
+    <Rectangle fill="DODGERBLUE" height="300.0" stroke="#ffffff8b" strokeType="INSIDE" visible="false" width="500.0" />
+    <ImageView fx:id="loginImage" fitHeight="300.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="10.0" AnchorPane.rightAnchor="10.0">
+        <image>
+            <Image url="@../images/church.png" />
+        </image>
+    </ImageView>
+   <Circle fx:id="churchLogo" fill="WHITE" radius="55.0" stroke="BLACK" strokeType="INSIDE" styleClass="image_Style" AnchorPane.leftAnchor="5.0" AnchorPane.topAnchor="5.0" />
+    <VBox alignment="CENTER" spacing="8.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="80.0" AnchorPane.topAnchor="10.0">
+        <Label fx:id="lblLogin" alignment="TOP_CENTER" text="Login" textAlignment="CENTER">
+            <font>
+                <Font name="Arial Bold" size="30.0" />
+            </font>
+            <VBox.margin>
+                <Insets bottom="8.0" left="10.0" />
+            </VBox.margin>
+        </Label>
+        <HBox alignment="CENTER_RIGHT" spacing="5.0">
+            <FontAwesomeIconView fill="#02a408" glyphName="USER" size="20">
+            <HBox.margin>
+               <Insets right="2.0" />
+            </HBox.margin></FontAwesomeIconView>
+            <TextField fx:id="adminName" alignment="CENTER" prefWidth="190.0" promptText="Username" />
+        </HBox>
+        <HBox alignment="CENTER_RIGHT" spacing="5.0">
+            <FontAwesomeIconView fill="#05a3c3" glyphName="KEY" size="19">
+            <HBox.margin>
+               <Insets />
+            </HBox.margin></FontAwesomeIconView>
+            <PasswordField fx:id="password" alignment="CENTER" onAction="#login" prefWidth="190.0" promptText="Password" />
+         <VBox.margin>
+            <Insets />
+         </VBox.margin>
+
+        </HBox>
+
+
+        <Button fx:id="btnLogin" alignment="CENTER" mnemonicParsing="false" onAction="#login" prefHeight="30.0" prefWidth="85.0" styleClass="background_LogOut" text="Sign In" textFill="WHITE">
+            <font>
+                <Font size="15.0" />
+            </font>
+            <effect>
+                <DropShadow blurType="ONE_PASS_BOX" />
+            </effect>
+            <VBox.margin>
+                <Insets left="10.0" top="5.0" />
+            </VBox.margin>
+        </Button>
+    </VBox>
+</AnchorPane>

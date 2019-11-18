@@ -1,0 +1,37 @@
+/* CSS for app */
+.text-field.error {
+  -fx-text-box-border: red ;
+  -fx-focus-color: red ;
+}
+
+.scroll-pane{
+   -fx-background:DODGERBLUE;
+}
+
+.background_danger{
+	-fx-background-color: #f44336;
+}
+
+.background_LogOut{
+	-fx-background-color: DODGERBLUE;
+}
+
+.background_Search{
+	-fx-background-color: #4CAF50;
+}
+
+.image_Style{
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.8), 10, 0, 0, 0);
+    -fx-background-radius: 5;
+}
+
+.textArea_Style > .border { -fx-stroke-width: 1; }
+
+.jfx-combo-box {
+	-fx-background-color:  PINK;
+}
+
+.jfx-combo-box{
+	-fx-background-color:  WHITE;
+	-fx-text-fill: RED;
+}

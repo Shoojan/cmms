@@ -1,0 +1,434 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Accordion?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.SeparatorMenuItem?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.TitledPane?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.control.Tooltip?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.input.KeyCodeCombination?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.text.Font?>
+<?import org.controlsfx.control.CheckComboBox?>
+
+<BorderPane prefWidth="1000.0" stylesheets="@../styles/Styles.css" xmlns="http://javafx.com/javafx/8.0.172-ea"
+            xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.sujan.controller.MemberController">
+    <top>
+        <MenuBar fx:id="menu" BorderPane.alignment="TOP_LEFT">
+            <Menu mnemonicParsing="false" text="Settings">
+                <MenuItem fx:id="adminSetting_Btn" mnemonicParsing="false" onAction="#menuItem_Clicked"
+                          text="Run Wizard">
+                    <accelerator>
+                        <KeyCodeCombination alt="UP" code="W" control="DOWN" meta="UP" shift="UP" shortcut="UP"/>
+                    </accelerator>
+                </MenuItem>
+                <SeparatorMenuItem mnemonicParsing="false"/>
+                <MenuItem fx:id="backupBtn" mnemonicParsing="false" onAction="#menuItem_Clicked" text="Backup">
+                    <accelerator>
+                        <KeyCodeCombination alt="UP" code="B" control="DOWN" meta="UP" shift="UP" shortcut="UP"/>
+                    </accelerator>
+                </MenuItem>
+                <MenuItem fx:id="restoreBackupBtn" mnemonicParsing="false" onAction="#menuItem_Clicked"
+                          text="Backup Restore">
+                    <accelerator>
+                        <KeyCodeCombination alt="UP" code="B" control="DOWN" meta="UP" shift="DOWN" shortcut="UP"/>
+                    </accelerator>
+                </MenuItem>
+                <SeparatorMenuItem mnemonicParsing="false"/>
+                <MenuItem fx:id="exitBtn" mnemonicParsing="false" onAction="#menuItem_Clicked" text="Exit"/>
+            </Menu>
+            <Menu mnemonicParsing="false" text="About">
+                <MenuItem fx:id="about_Btn" mnemonicParsing="false" onAction="#menuItem_Clicked" text="About"/>
+            </Menu>
+        </MenuBar>
+    </top>
+    <center>
+        <StackPane fx:id="stackPane" BorderPane.alignment="CENTER">
+            <AnchorPane StackPane.alignment="CENTER">
+                <HBox alignment="TOP_CENTER" spacing="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="200.0"
+                      AnchorPane.topAnchor="10.0">
+                    <CheckComboBox fx:id="fieldsCB" prefHeight="30.0" prefWidth="120.0"/>
+                    <TextField fx:id="searchTF" alignment="CENTER" promptText="Search">
+                        <font>
+                            <Font size="14.0"/>
+                        </font>
+                    </TextField>
+                    <Separator layoutX="894.0" layoutY="10.0" orientation="VERTICAL">
+                        <HBox.margin>
+                            <Insets left="10.0" right="10.0"/>
+                        </HBox.margin>
+                    </Separator>
+                    <ComboBox fx:id="exportCB" prefHeight="30.0" promptText="Export">
+                        <effect>
+                            <DropShadow blurType="ONE_PASS_BOX" color="#778899"/>
+                        </effect>
+                    </ComboBox>
+                </HBox>
+                <HBox spacing="15.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0">
+                    <Separator layoutX="154.0" layoutY="10.0" orientation="VERTICAL"/>
+                    <Button fx:id="addBtn" mnemonicParsing="false" style="-fx-background-color: #4CAF50;"
+                            text="Add Member" textFill="WHITE" textOverrun="CLIP">
+                        <font>
+                            <Font size="14.0"/>
+                        </font>
+                        <effect>
+                            <DropShadow blurType="ONE_PASS_BOX" color="#00000091"/>
+                        </effect>
+                    </Button>
+                    <Separator orientation="VERTICAL">
+                        <HBox.margin>
+                            <Insets/>
+                        </HBox.margin>
+                    </Separator>
+                    <Button alignment="CENTER" mnemonicParsing="false" onAction="#logout" prefHeight="25.0"
+                            prefWidth="70.0" style="-fx-background-color: #f44336;" text="Logout" textFill="WHITE"
+                            textOverrun="CLIP">
+                        <font>
+                            <Font size="14.0"/>
+                        </font>
+                        <effect>
+                            <DropShadow blurType="ONE_PASS_BOX" color="#00000091"/>
+                        </effect>
+                    </Button>
+                </HBox>
+                <VBox alignment="CENTER" spacing="10.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0"
+                      AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="80.0">
+                    <Circle fx:id="churchLogo" fill="WHITE" radius="80.0" stroke="BLACK" strokeType="INSIDE"
+                            styleClass="image_Style"/>
+                    <Label fx:id="churchName" alignment="CENTER" text="Codeaxis Chuch Foundation">
+                        <font>
+                            <Font name="Arial Black" size="24.0"/>
+                        </font>
+                    </Label>
+                    <Label fx:id="churchAddress" text="Satdobato, Lalitpur">
+                        <font>
+                            <Font name="Arial Black" size="15.0"/>
+                        </font>
+                    </Label>
+                    <Label fx:id="churchContact" layoutX="387.0" layoutY="227.0" text="01-4312119">
+                        <font>
+                            <Font name="Arial Black" size="13.0"/>
+                        </font>
+                    </Label>
+                </VBox>
+                <Accordion AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0"
+                           AnchorPane.topAnchor="50.0">
+                    <panes>
+                        <TitledPane fx:id="mmbersTP" alignment="CENTER" expanded="false" text="Members"
+                                    textAlignment="CENTER">
+                            <font>
+                                <Font name="System Bold" size="15.0"/>
+                            </font>
+                            <AnchorPane>
+                                <TableView fx:id="userTable" tableMenuButtonVisible="true" AnchorPane.bottomAnchor="0.0"
+                                           AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0"
+                                           AnchorPane.topAnchor="0.0">
+                                    <columns>
+                                        <TableColumn fx:id="colId" maxWidth="40" minWidth="40" text="ID"
+                                                     visible="false"/>
+                                        <TableColumn fx:id="colMemberId" prefWidth="100.0" text="Member ID"/>
+                                        <TableColumn fx:id="colFirstName" prefWidth="200.0" text="First Name"/>
+                                        <TableColumn fx:id="colMiddleName" prefWidth="150.0" text="Middle Name"/>
+                                        <TableColumn fx:id="colLastName" prefWidth="200.0" text="Last Name"/>
+                                        <TableColumn fx:id="colFatherName" prefWidth="200.0" text="Father"/>
+                                        <TableColumn fx:id="colMotherName" prefWidth="200.0" text="Mother"/>
+                                        <TableColumn fx:id="colSpouseName" prefWidth="200.0" text="Spouse"/>
+                                        <TableColumn fx:id="colAddress" prefWidth="300.0" text="Address"/>
+                                        <TableColumn fx:id="colPhone" prefWidth="200.0" text="Phone"/>
+                                        <TableColumn fx:id="colEmail" prefWidth="250.0" text="Email"/>
+                                        <TableColumn fx:id="colGender" minWidth="30" maxWidth="30" text="Gender"/>
+                                        <TableColumn fx:id="colMaritalStatus" prefWidth="50.0" text="Marital Status"/>
+                                        <TableColumn fx:id="colDOB" prefWidth="70.0" text="Date of Birth"/>
+                                        <TableColumn fx:id="colDOD" prefWidth="70.0" text="Date of Baptism"/>
+                                        <TableColumn fx:id="colDOM" prefWidth="70.0" text="Date of Membership"/>
+                                        <TableColumn fx:id="colArea" prefWidth="40.0" text="Area"/>
+                                        <TableColumn fx:id="colAbout" prefWidth="500.0" text="About"/>
+                                        <TableColumn fx:id="colAgeGroup" prefWidth="50.0" text="Age Group"/>
+                                        <TableColumn fx:id="colPhoto" prefWidth="50.0" text="Photo" visible="false"/>
+                                        <TableColumn fx:id="colEdit" maxWidth="50" minWidth="30.0" text="Edit"/>
+                                    </columns>
+                                    <columnResizePolicy>
+                                        <TableView fx:constant="CONSTRAINED_RESIZE_POLICY"/>
+                                    </columnResizePolicy>
+                                </TableView>
+                            </AnchorPane>
+                        </TitledPane>
+                    </panes>
+                </Accordion>
+            </AnchorPane>
+            <HBox fx:id="slider" alignment="CENTER_LEFT" maxWidth="-Infinity" StackPane.alignment="CENTER_LEFT">
+                <StackPane.margin>
+                    <Insets bottom="5.0"/>
+                </StackPane.margin>
+                <AnchorPane styleClass="background_LogOut">
+                    <HBox alignment="CENTER" spacing="15.0" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="0.0"
+                          AnchorPane.rightAnchor="0.0">
+                        <Button mnemonicParsing="false" onAction="#onExportPdfButtonClicked"
+                                style="-fx-background-color: #2f4f4f;">
+                            <effect>
+                                <DropShadow blurType="ONE_PASS_BOX" color="#1965d0"/>
+                            </effect>
+                            <graphic>
+                                <FontAwesomeIconView fill="whitesmoke" glyphName="FILE_PDF_ALT"/>
+                            </graphic>
+                        </Button>
+                        <Button fx:id="reset" mnemonicParsing="false" onAction="#reset" prefHeight="30.0"
+                                prefWidth="120.0" style="-fx-background-color: gray;" text="Reset" textFill="WHITE">
+                            <effect>
+                                <DropShadow blurType="ONE_PASS_BOX" color="#1965d0"/>
+                            </effect>
+                            <font>
+                                <Font size="15.0"/>
+                            </font>
+                        </Button>
+                        <Button fx:id="saveMember" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false"
+                                onAction="#saveMember" prefHeight="30.0" prefWidth="120.0"
+                                style="-fx-background-color: #4CAF50;" text="Save" textFill="WHITE">
+                            <font>
+                                <Font size="15.0"/>
+                            </font>
+                            <effect>
+                                <DropShadow blurType="ONE_PASS_BOX" color="#6468b2"/>
+                            </effect>
+                        </Button>
+                        <opaqueInsets>
+                            <Insets/>
+                        </opaqueInsets>
+                    </HBox>
+                    <ScrollPane fx:id="sliderContent" fitToWidth="true" prefWidth="350.0" AnchorPane.bottomAnchor="50.0"
+                                AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                        <AnchorPane fx:id="memberPane">
+                            <Label fx:id="uniqueId" visible="false" AnchorPane.leftAnchor="0.0"
+                                   AnchorPane.topAnchor="0.0"/>
+                            <Accordion styleClass="background_LogOut" AnchorPane.bottomAnchor="10.0"
+                                       AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0"
+                                       AnchorPane.topAnchor="350.0">
+                                <panes>
+                                    <TitledPane fx:id="moreDetailsTP" alignment="CENTER" expanded="false"
+                                                text="More Details">
+                                        <font>
+                                            <Font name="System Bold" size="12.0"/>
+                                        </font>
+                                        <AnchorPane minHeight="0.0" minWidth="0.0" styleClass="background_LogOut">
+                                            <VBox alignment="TOP_CENTER" spacing="10.0" AnchorPane.bottomAnchor="0.0"
+                                                  AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0"
+                                                  AnchorPane.topAnchor="0.0">
+                                                <TextField fx:id="fatherName" alignment="CENTER"
+                                                           promptText="Father's Name">
+                                                    <tooltip>
+                                                        <Tooltip text="Father's Name"/>
+                                                    </tooltip>
+                                                </TextField>
+                                                <TextField fx:id="motherName" alignment="CENTER" layoutX="10.0"
+                                                           layoutY="10.0" promptText="Mother's Name">
+                                                    <tooltip>
+                                                        <Tooltip text="Mother's Name"/>
+                                                    </tooltip>
+                                                </TextField>
+                                                <HBox alignment="CENTER" spacing="10.0">
+                                                    <RadioButton fx:id="rbSingle" mnemonicParsing="false"
+                                                                 prefWidth="120.0" selected="true" text="Single"
+                                                                 textFill="WHITE">
+                                                        <toggleGroup>
+                                                            <ToggleGroup fx:id="maritalStatus_TG"/>
+                                                        </toggleGroup>
+                                                    </RadioButton>
+                                                    <RadioButton fx:id="rbMarried" mnemonicParsing="false"
+                                                                 prefWidth="120.0" text="Married" textFill="WHITE"
+                                                                 toggleGroup="$maritalStatus_TG">
+                                                        <HBox.margin>
+                                                            <Insets left="10.0"/>
+                                                        </HBox.margin>
+                                                    </RadioButton>
+                                                    <VBox.margin>
+                                                        <Insets left="20.0"/>
+                                                    </VBox.margin>
+                                                </HBox>
+                                                <TextField fx:id="spouseName" alignment="CENTER" layoutX="10.0"
+                                                           layoutY="45.0" promptText="Spouse Name">
+                                                    <tooltip>
+                                                        <Tooltip text="Spouse's Name"/>
+                                                    </tooltip>
+                                                </TextField>
+                                                <HBox alignment="CENTER_LEFT" layoutX="10.0" layoutY="142.0"
+                                                      spacing="5.0">
+                                                    <Label alignment="CENTER_RIGHT" prefWidth="40.0"
+                                                           style="-fx-text-fill: WHITE;"
+                                                           text="DOBa :"/>
+                                                    <TextField fx:id="dodYear" prefWidth="70.0" promptText="Year"/>
+                                                    <ComboBox fx:id="dodMonth" layoutX="10.0" layoutY="10.0"
+                                                              prefWidth="100.0" promptText="Month"/>
+                                                    <TextField fx:id="dodDay" prefWidth="50.0" promptText="Day"/>
+                                                </HBox>
+                                                <HBox alignment="CENTER_LEFT" spacing="5.0">
+                                                    <Label alignment="CENTER_RIGHT"
+                                                           prefWidth="40.0" style="-fx-text-fill: WHITE;" text="DOM :"/>
+                                                    <TextField fx:id="domYear" prefWidth="70.0" promptText="Year"/>
+                                                    <ComboBox fx:id="domMonth" layoutX="10.0" layoutY="10.0"
+                                                              prefWidth="100.0" promptText="Month"/>
+                                                    <TextField fx:id="domDay" prefWidth="50.0" promptText="Day"/>
+                                                </HBox>
+                                                <HBox spacing="5.0">
+                                                    <ComboBox fx:id="cb_AgeGroup" editable="true" prefWidth="150.0"
+                                                              promptText="Age Group">
+                                                        <tooltip>
+                                                            <Tooltip text="Age Group"/>
+                                                        </tooltip>
+                                                    </ComboBox>
+                                                    <TextField fx:id="area" alignment="CENTER" promptText="Area">
+                                                        <tooltip>
+                                                            <Tooltip text="Area Number"/>
+                                                        </tooltip>
+                                                    </TextField>
+                                                </HBox>
+                                                <TextField fx:id="email" alignment="CENTER" promptText="Email">
+                                                    <tooltip>
+                                                        <Tooltip text="Email"/>
+                                                    </tooltip>
+                                                </TextField>
+                                                <TextArea fx:id="about" prefHeight="80.0" promptText="About"
+                                                          styleClass="textArea_Style">
+                                                    <tooltip>
+                                                        <Tooltip text="About"/>
+                                                    </tooltip>
+                                                </TextArea>
+                                            </VBox>
+                                        </AnchorPane>
+                                    </TitledPane>
+                                </panes>
+                            </Accordion>
+
+                            <VBox alignment="TOP_CENTER" maxHeight="300.0" opacity="0.9" prefHeight="300.0"
+                                  spacing="12.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0"
+                                  AnchorPane.topAnchor="10.0">
+                                <AnchorPane>
+                                    <TextField fx:id="memberId" prefWidth="80.0" promptText="Member Id"
+                                               AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0"/>
+                                    <Circle fx:id="imageCircle" fill="DODGERBLUE" radius="60.0" stroke="WHITE"
+                                            strokeType="INSIDE" styleClass="image_Style" AnchorPane.bottomAnchor="0.0"
+                                            AnchorPane.leftAnchor="100.0" AnchorPane.topAnchor="0.0"/>
+                                    <HBox spacing="10.0" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="20.0">
+                                        <Button fx:id="cameraBtn" alignment="CENTER" mnemonicParsing="false"
+                                                onAction="#onCameraBtnClick">
+                                            <effect>
+                                                <DropShadow blurType="ONE_PASS_BOX" color="#1965d0"/>
+                                            </effect>
+                                            <graphic>
+                                                <FontAwesomeIconView fill="black" glyphName="CAMERA"/>
+                                            </graphic>
+                                        </Button>
+                                        <Button alignment="CENTER" mnemonicParsing="false" onAction="#onPhotoBtnClick">
+                                            <effect>
+                                                <DropShadow blurType="ONE_PASS_BOX" color="#1965d0"/>
+                                            </effect>
+                                            <graphic>
+                                                <FontAwesomeIconView fill="black" glyphName="FOLDER_OPEN"/>
+                                            </graphic>
+                                        </Button>
+                                    </HBox>
+                                </AnchorPane>
+                                <HBox alignment="CENTER" spacing="5.0">
+                                    <TextField fx:id="firstName" alignment="CENTER" promptText="First Name">
+                                        <tooltip>
+                                            <Tooltip text="First Name"/>
+                                        </tooltip>
+                                    </TextField>
+                                    <TextField fx:id="middleName" alignment="CENTER" prefWidth="100.0"
+                                               promptText="Middle">
+                                        <tooltip>
+                                            <Tooltip text="Middle Name"/>
+                                        </tooltip>
+                                    </TextField>
+                                    <TextField fx:id="lastName" alignment="CENTER" promptText="Last Name">
+                                        <tooltip>
+                                            <Tooltip text="Last Name"/>
+                                        </tooltip>
+                                    </TextField>
+                                </HBox>
+                                <TextField fx:id="address" alignment="CENTER" promptText="Address">
+                                    <tooltip>
+                                        <Tooltip text="Address"/>
+                                    </tooltip>
+                                </TextField>
+                                <TextField fx:id="phone" alignment="CENTER" prefWidth="200.0" promptText="Phone">
+                                    <tooltip>
+                                        <Tooltip text="Phone (Mobile or LandLine)"/>
+                                    </tooltip>
+                                </TextField>
+                                <HBox alignment="CENTER_LEFT" spacing="5.0">
+                                    <Label alignment="CENTER_RIGHT" prefWidth="50.0" style="-fx-text-fill: WHITE;"
+                                           text="DOB :"/>
+                                    <TextField fx:id="dobYear" prefWidth="70.0" promptText="Year">
+                                        <tooltip>
+                                            <Tooltip text="Supported from 1970 to 2099 only"/>
+                                        </tooltip>
+                                    </TextField>
+                                    <ComboBox fx:id="dobMonth" layoutX="10.0" layoutY="10.0" prefWidth="100.0"
+                                              promptText="Month"/>
+                                    <TextField fx:id="dobDay" prefWidth="50.0" promptText="Day"/>
+                                    <Label fx:id="agelbl" prefWidth="70.0" style="-fx-text-fill: WHITE;" text="Age:  "/>
+                                </HBox>
+                                <HBox alignment="CENTER" prefWidth="150.0" spacing="10.0">
+                                    <RadioButton fx:id="rbMale" mnemonicParsing="false" prefWidth="80.0" selected="true"
+                                                 text="Male" textFill="WHITE">
+                                        <toggleGroup>
+                                            <ToggleGroup fx:id="gender"/>
+                                        </toggleGroup>
+                                        <HBox.margin>
+                                            <Insets left="10.0"/>
+                                        </HBox.margin>
+                                    </RadioButton>
+                                    <RadioButton fx:id="rbFemale" mnemonicParsing="false" prefWidth="90.0" text="Female"
+                                                 textFill="WHITE" toggleGroup="$gender">
+                                        <HBox.margin>
+                                            <Insets left="10.0"/>
+                                        </HBox.margin>
+                                    </RadioButton>
+                                    <RadioButton fx:id="rbOther" mnemonicParsing="false" prefWidth="90.0" text="Other"
+                                                 textFill="WHITE" toggleGroup="$gender"/>
+                                </HBox>
+                                <padding>
+                                    <Insets bottom="10.0" left="10.0" right="10.0" top="10.0"/>
+                                </padding>
+                            </VBox>
+                        </AnchorPane>
+                        <opaqueInsets>
+                            <Insets/>
+                        </opaqueInsets>
+                    </ScrollPane>
+                </AnchorPane>
+                <AnchorPane fx:id="imgAnchorPane">
+                    <VBox fx:id="imgVBox" alignment="CENTER_LEFT" spacing="10.0" AnchorPane.bottomAnchor="0.0"
+                          AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
+                        <Button fx:id="expandBtn" mnemonicParsing="false" opacity="0.8" prefHeight="50.0"
+                                styleClass="background_LogOut" text="&gt;" textFill="WHITE" wrapText="true">
+                            <font>
+                                <Font size="14.0"/>
+                            </font>
+                        </Button>
+                    </VBox>
+                </AnchorPane>
+            </HBox>
+        </StackPane>
+    </center>
+</BorderPane>

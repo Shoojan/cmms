@@ -1,0 +1,348 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.text.Font?>
+
+<HBox prefHeight="680.0" prefWidth="650.0" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.sujan.controller.SoloMemberDisplayController">
+    <ScrollPane fitToHeight="true" fitToWidth="true" hmin="615.0" hvalue="1.0" prefWidth="580.0">
+        <content>
+            <AnchorPane maxHeight="842.0" maxWidth="595.0" minHeight="0.0" minWidth="0.0" prefHeight="842.0" prefWidth="595.0">
+                <children>
+                    <BorderPane fx:id="solorMemberPane" layoutY="54.0" prefHeight="842.0" prefWidth="595.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                        <bottom>
+                            <HBox prefHeight="50.0" BorderPane.alignment="CENTER">
+                                <BorderPane.margin>
+                                    <Insets bottom="10.0" left="40.0" right="20.0" top="10.0" />
+                                </BorderPane.margin>
+                                <Label fx:id="mCurrentDate" text="31/03/2019">
+                                    <font>
+                                        <Font size="16.0" />
+                                    </font>
+                                </Label>
+                            </HBox>
+                        </bottom>
+                        <top>
+                            <HBox alignment="CENTER_RIGHT" spacing="15.0" BorderPane.alignment="CENTER">
+                                <BorderPane.margin>
+                                    <Insets left="40.0" right="20.0" top="10.0" />
+                                </BorderPane.margin>
+                                <VBox alignment="CENTER" spacing="10.0">
+                                    <Label fx:id="churchName" alignment="CENTER" text="Codeaxis Chuch Foundation">
+                                        <font>
+                                            <Font name="Arial Black" size="24.0" />
+                                        </font>
+                                    </Label>
+                                    <Label fx:id="churchAddress" text="Satdobato, Lalitpur">
+                                        <font>
+                                            <Font name="Arial Black" size="15.0" />
+                                        </font>
+                                    </Label>
+                                    <Label fx:id="churchContact" text="01-4312119">
+                                        <font>
+                                            <Font name="Arial Black" size="13.0" />
+                                        </font>
+                                    </Label>
+                                </VBox>
+                                <Circle fx:id="churchLogo" fill="WHITE" radius="55.0" stroke="BLACK" strokeType="INSIDE" styleClass="image_Style">
+                                    <HBox.margin>
+                                        <Insets />
+                                    </HBox.margin>
+                                </Circle>
+                            </HBox>
+                        </top>
+                        <center>
+                            <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+                                <BorderPane.margin>
+                                    <Insets bottom="10.0" left="40.0" right="20.0" top="10.0" />
+                                </BorderPane.margin>
+                                <GridPane AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                    <columnConstraints>
+                                        <ColumnConstraints hgrow="SOMETIMES" prefWidth="200.0" />
+                                        <ColumnConstraints hgrow="SOMETIMES" minWidth="50.0" prefWidth="50.0" />
+                                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="295.0" />
+                                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="10.0" />
+                                    </columnConstraints>
+                                    <rowConstraints>
+                                        <RowConstraints prefHeight="200.0" vgrow="SOMETIMES" />
+                                        <RowConstraints vgrow="SOMETIMES" />
+                                    </rowConstraints>
+                                    <Circle fx:id="memberImage" fill="DODGERBLUE" radius="80.0" stroke="WHITE" strokeType="INSIDE" styleClass="image_Style" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
+                                    <VBox fx:id="namePane" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+                                        <Label fx:id="mId" text="&lt;&lt;MEMBERID&gt;&gt;">
+                                            <font>
+                                                <Font name="System Bold" size="30.0" />
+                                            </font>
+                                            <VBox.margin>
+                                                <Insets bottom="30.0" />
+                                            </VBox.margin>
+                                        </Label>
+                                        <Label fx:id="mFirstName" text="&lt;&lt;FIRST&gt;&gt;">
+                                            <font>
+                                                <Font size="24.0" />
+                                            </font>
+                                        </Label>
+                                        <Label fx:id="mLastName" text="&lt;&lt;LAST&gt;&gt;">
+                                            <font>
+                                                <Font size="24.0" />
+                                            </font>
+                                        </Label>
+                                        <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="100.0">
+                                            <VBox.margin>
+                                                <Insets top="60.0" />
+                                            </VBox.margin>
+                                            <Label text="CONTACT">
+                                                <font>
+                                                    <Font name="System Bold" size="16.0" />
+                                                </font>
+                                                <VBox.margin>
+                                                    <Insets />
+                                                </VBox.margin>
+                                            </Label>
+                                            <Separator prefWidth="200.0" style="-fx-background-color: DODGERBLUE;" />
+                                            <Label text="Phone:">
+                                                <font>
+                                                    <Font name="System Bold" size="14.0" />
+                                                </font>
+                                            </Label>
+                                            <Label fx:id="mPhone" text="&lt;&lt;PHONE&gt;&gt;">
+                                                <font>
+                                                    <Font size="14.0" />
+                                                </font>
+                                            </Label>
+                                            <Label text="Email:">
+                                                <font>
+                                                    <Font name="System Bold" size="14.0" />
+                                                </font>
+                                                <VBox.margin>
+                                                    <Insets top="30.0" />
+                                                </VBox.margin>
+                                            </Label>
+                                            <Label fx:id="mEmail" layoutX="93.0" layoutY="78.0" text="&lt;&lt;EMAIL&gt;&gt;">
+                                                <font>
+                                                    <Font size="14.0" />
+                                                </font>
+                                            </Label>
+                                        </VBox>
+                                    </VBox>
+
+                                    <VBox alignment="CENTER" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="0" GridPane.rowSpan="2" GridPane.valignment="CENTER">
+                                        <Label text="Personal Information">
+                                            <font>
+                                                <Font name="System Bold" size="16.0" />
+                                            </font>
+                                            <VBox.margin>
+                                                <Insets top="20.0" />
+                                            </VBox.margin>
+                                        </Label>
+                                        <Separator>
+                                            <VBox.margin>
+                                                <Insets />
+                                            </VBox.margin>
+                                        </Separator>
+                                        <GridPane alignment="TOP_CENTER">
+                                            <columnConstraints>
+                                                <ColumnConstraints hgrow="SOMETIMES" minWidth="95.0" prefWidth="95.0" />
+                                                <ColumnConstraints hgrow="SOMETIMES" />
+                                            </columnConstraints>
+                                            <rowConstraints>
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                <RowConstraints minHeight="50.0" prefHeight="70.0" vgrow="SOMETIMES" />
+                                            </rowConstraints>
+                                            <Label text="Gender">
+                                                <font>
+                                                    <Font name="System Bold" size="14.0" />
+                                                </font>
+                                            </Label>
+                                            <Label text="Marital Status" GridPane.rowIndex="1">
+                                                <font>
+                                                    <Font name="System Bold" size="14.0" />
+                                                </font>
+                                            </Label>
+                                            <Label text="About" GridPane.rowIndex="2">
+                                                <font>
+                                                    <Font name="System Bold" size="14.0" />
+                                                </font>
+                                            </Label>
+                                            <Label fx:id="mGender" text="&lt;&lt;GENDER&gt;&gt;" GridPane.columnIndex="1">
+                                                <font>
+                                                    <Font size="14.0" />
+                                                </font>
+                                            </Label>
+                                            <Label fx:id="mMaritalStatus" text="&lt;&lt;MARITAL&gt;&gt;" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                                <font>
+                                                    <Font size="14.0" />
+                                                </font>
+                                            </Label>
+                                            <Label fx:id="mAbout" minHeight="50.0" prefHeight="80.0" text="&lt;&lt;ABOUT&gt;&gt;" wrapText="true" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                                                <font>
+                                                    <Font size="14.0" />
+                                                </font>
+                                            </Label>
+                                        </GridPane>
+                                        <Label text="Address">
+                                            <font>
+                                                <Font name="System Bold" size="16.0" />
+                                            </font>
+                                            <VBox.margin>
+                                                <Insets top="20.0" />
+                                            </VBox.margin>
+                                        </Label>
+                                        <Separator />
+                                        <GridPane alignment="TOP_CENTER">
+                                            <columnConstraints>
+                                                <ColumnConstraints hgrow="SOMETIMES" minWidth="95.0" prefWidth="95.0" />
+                                                <ColumnConstraints hgrow="SOMETIMES" />
+                                            </columnConstraints>
+                                            <rowConstraints>
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                            </rowConstraints>
+                                            <Label text="Address">
+                                                <font>
+                                                    <Font name="System Bold" size="14.0" />
+                                                </font>
+                                            </Label>
+                                            <Label text="Area No" GridPane.rowIndex="1">
+                                                <font>
+                                                    <Font name="System Bold" size="14.0" />
+                                                </font>
+                                            </Label>
+                                            <Label fx:id="mAddress" text="&lt;&lt;ADDRESS&gt;&gt;" GridPane.columnIndex="1">
+                                                <font>
+                                                    <Font size="14.0" />
+                                                </font>
+                                            </Label>
+                                            <Label fx:id="mArea" text="&lt;&lt;AREA&gt;&gt;" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                                <font>
+                                                    <Font size="14.0" />
+                                                </font>
+                                            </Label>
+                                        </GridPane>
+                                        <Label text="Family Details">
+                                            <font>
+                                                <Font name="System Bold" size="16.0" />
+                                            </font>
+                                            <VBox.margin>
+                                                <Insets top="20.0" />
+                                            </VBox.margin>
+                                        </Label>
+                                        <Separator />
+                                        <GridPane alignment="TOP_CENTER">
+                                            <columnConstraints>
+                                                <ColumnConstraints hgrow="SOMETIMES" minWidth="105.0" prefWidth="105.0" />
+                                                <ColumnConstraints hgrow="SOMETIMES" />
+                                            </columnConstraints>
+                                            <rowConstraints>
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                            </rowConstraints>
+                                            <Label text="Father's Name">
+                                                <font>
+                                                    <Font name="System Bold" size="14.0" />
+                                                </font>
+                                            </Label>
+                                            <Label text="Mother's Name" GridPane.rowIndex="1">
+                                                <font>
+                                                    <Font name="System Bold" size="14.0" />
+                                                </font>
+                                            </Label>
+                                            <Label text="Spouse's Name" GridPane.rowIndex="2">
+                                                <font>
+                                                    <Font name="System Bold" size="14.0" />
+                                                </font>
+                                            </Label>
+                                            <Label fx:id="mFather" text="&lt;&lt;FATHER&gt;&gt;" GridPane.columnIndex="1">
+                                                <font>
+                                                    <Font size="14.0" />
+                                                </font>
+                                            </Label>
+                                            <Label fx:id="mMother" text="&lt;&lt;MOTHER&gt;&gt;" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                                <font>
+                                                    <Font size="14.0" />
+                                                </font>
+                                            </Label>
+                                            <Label fx:id="mSpouse" text="&lt;&lt;SPOUSE&gt;&gt;" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                                                <font>
+                                                    <Font size="14.0" />
+                                                </font>
+                                            </Label>
+                                        </GridPane>
+                                        <Label text="Date Details">
+                                            <font>
+                                                <Font name="System Bold" size="16.0" />
+                                            </font>
+                                            <VBox.margin>
+                                                <Insets top="20.0" />
+                                            </VBox.margin>
+                                        </Label>
+                                        <Separator />
+                                        <GridPane alignment="TOP_CENTER">
+                                            <columnConstraints>
+                                                <ColumnConstraints hgrow="SOMETIMES" minWidth="110.0" prefWidth="110.0" />
+                                                <ColumnConstraints hgrow="SOMETIMES" />
+                                            </columnConstraints>
+                                            <rowConstraints>
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                            </rowConstraints>
+                                            <Label text="Date of Birth">
+                                                <font>
+                                                    <Font name="System Bold" size="14.0" />
+                                                </font>
+                                            </Label>
+                                            <Label text="Membership Date" GridPane.rowIndex="2">
+                                                <font>
+                                                    <Font name="System Bold" size="14.0" />
+                                                </font>
+                                            </Label>
+                                            <Label text="Date of Baptism" GridPane.rowIndex="1">
+                                                <font>
+                                                    <Font name="System Bold" size="14.0" />
+                                                </font>
+                                            </Label>
+                                            <Label fx:id="mDOB" text="&lt;&lt;DOB&gt;&gt;" GridPane.columnIndex="1">
+                                                <font>
+                                                    <Font size="14.0" />
+                                                </font>
+                                            </Label>
+                                            <Label fx:id="mDOM" text="&lt;&lt;DOM&gt;&gt;" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                                                <font>
+                                                    <Font size="14.0" />
+                                                </font>
+                                            </Label>
+                                            <Label fx:id="mDOD" text="&lt;&lt;DOD&gt;&gt;" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                                <font>
+                                                    <Font size="14.0" />
+                                                </font>
+                                            </Label>
+                                        </GridPane>
+                                    </VBox>
+                                </GridPane>
+                            </AnchorPane>
+                        </center>
+                    </BorderPane>
+                </children>
+            </AnchorPane>
+        </content>
+    </ScrollPane>
+    <VBox alignment="CENTER" prefWidth="70.0">
+        <children>
+            <Button mnemonicParsing="false" onAction="#savePdf" prefHeight="50.0" prefWidth="60.0" style="-fx-background-color: DODGERBLUE;" text="Save" textFill="WHITE" />
+        </children>
+    </VBox>
+</HBox>
